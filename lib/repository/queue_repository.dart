@@ -42,6 +42,17 @@ class QueueRepository {
     });
   }
 
+  // ใหม่: อัปเดตข้อมูลคิวที่มีอยู่แล้ว โดยอ้างอิงจาก id
+  static update({required Queue queue}) async {
+    final db = await _database();
+    await db.update(
+      _tableName,
+      queue.toMap(),
+      where: 'id = ?',
+      whereArgs: [queue.id],
+    );
+  }
+
   static delete({required Queue queue}) async {
     final db = await _database();
     await db.delete(

@@ -11,6 +11,7 @@ dependencies:
     sdk: flutter
   intl: ^0.20.3
   sqflite: ^2.4.3
+  sqflite_common_ffi: ^2.3.4   # เพิ่ม: ทำให้ sqflite ใช้งานได้บน Windows/Linux/macOS (desktop)
 
 dev_dependencies:
   flutter_test:
